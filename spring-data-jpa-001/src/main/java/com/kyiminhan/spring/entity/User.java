@@ -20,6 +20,8 @@ import lombok.Setter;
 @EntityListeners(AuditingEntityListener.class)
 public class User extends Auditable<String> {
 
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;

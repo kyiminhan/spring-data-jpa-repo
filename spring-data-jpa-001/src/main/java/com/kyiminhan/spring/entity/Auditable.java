@@ -1,5 +1,6 @@
 package com.kyiminhan.spring.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.EntityListeners;
@@ -20,7 +21,9 @@ import lombok.Setter;
 @Setter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class Auditable<T> {
+public abstract class Auditable<T> implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@CreatedBy
 	protected T createdBy;
